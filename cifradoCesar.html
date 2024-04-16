@@ -1,0 +1,28 @@
+<!-- fecha: 16 de abril del 2024
+desarrolladores: Parra Hernández José Ángel, Ruelas Leal José Joel
+proyecto Seguridad Informática Equipo 9 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIFRADO EQUIPO 9</title>
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="Ingrese texto a cifrar/descifrar" class="texto-cifrado">
+        <input type="number" placeholder="Ingrese número de desplazamiento" class="clave-cifrado" min="0" max="26">
+
+        <input type="radio" name="accion-cifrado" class="accion-cifrar" value="1">Cifrar
+
+        <input type="radio" name="accion-cifrado" class="accion-descifrar" value="2">Descifrar
+
+        <input type="button" value="Procesar" onclick="obtenerValor()">
+    </div>
+
+    <p>texto cifrado: <b class="resultado-cifrado"></b></p>
+
+    <script src="cifradoCesar.js"></script>
+</body>
+</html>
