@@ -1,3 +1,7 @@
+/* fecha: 15 de abril del 2024
+desarrolladores: Parra Hernández José Ángel, Ruelas Leal José Joel
+proyecto Seguridad Informática Equipo 9 */
+
 
 var abecedario = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var resultadoCifrado = document.querySelector(".resultado-cifrado");
