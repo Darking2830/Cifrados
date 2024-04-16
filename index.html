@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIFRADO EQUIPO 9</title>
+</head>
+<body>
+    <form class="formulario">
+        <input type="text" placeholder="Ingrese el texto a cifrar/descifrar" class="texto-cifrado">
+        <input type="text" placeholder="Ingrese la clave de cifrado" class="clave-cifrado">
+    </form>
+
+    <input type="radio" name="accion-cifrado" class="accion-cifrar" value="1">Cifrar
+
+    <input type="radio" name="accion-cifrado" class="accion-descifrar" value="2">Descifrar
+
+    <input type="button" onclick="obtenerValor()" value="Procesar">
+
+    <p>texto cifrado: <b class="resultado-cifrado"></b></p>
+
+
+    <script src="scritpVigenere.js"></script>
+
+</body>
+</html>
