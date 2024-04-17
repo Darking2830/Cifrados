@@ -1,6 +1,7 @@
 
 
 var resultadoCifrado = document.querySelector(".resultado-cifrado");
+var resultadoMatriz = document.querySelector(".resultado-matriz");
 
 function obtenerValor(){
     let texto = document.querySelector(".texto-cifrado").value;
@@ -30,6 +31,7 @@ function obtenerValor(){
 
 function mostrarResultado(resultado){
     resultadoCifrado.innerText = resultado.join("").toLowerCase();
+    
 }
 
 function quitarAsteriscosTexto(texto){
@@ -101,8 +103,10 @@ function cifrarTexto(texto, clave){
 
     /* let cadenaMensaje = tablaMensaje.flat(); */
 
-    /* console.log(tablaMensaje);
-    console.log(tablaMensaje.length); */
+    /* console.log(tablaMensaje); */
+    /* console.log(tablaMensaje.length); */
+
+    /* document.write(tablaMensaje); */
 
     return cadenaMensaje;
 }
