@@ -1,4 +1,6 @@
 
+var abecedario = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+
 var resultadoCifrado = document.querySelector(".resultado-cifrado");
 var resultadoMatriz = document.querySelector(".resultado-matriz");
 
@@ -9,18 +11,18 @@ function obtenerValor(){
 
     /* console.log(accion); */
 
-    // let textoSustituido;
+    let textoSustituido;
     let textoResultado;
 
     if (accion == 1) {
-        /* textoSustituido = ponerAsteriscosTexto(texto); */
-        textoResultado = cifrarTexto(texto.toUpperCase(), clave.toUpperCase());
+        textoSustituido = ponerAsteriscosTexto(texto);
+        textoResultado = cifrarTexto(textoSustituido.toUpperCase(), clave.toUpperCase(), accion);
         mostrarResultado(textoResultado);
     }
 
     if (accion == 2) {
-        /* textoSustituido = quitarAsteriscosTexto(texto); */
-        textoResultado = descifrarTexto(texto.toUpperCase(), clave.toUpperCase());
+        textoSustituido = quitarAsteriscosTexto(texto);
+        textoResultado = descifrarTexto(textoSustituido.toUpperCase(), clave.toUpperCase(), accion);
         mostrarResultado(textoResultado);
     }
 
@@ -33,25 +35,73 @@ function mostrarResultado(resultado){
     
 }
 
-/* function quitarAsteriscosTexto(texto){
+function quitarAsteriscosTexto(texto){
     
     texto = texto.split("*").join(" ");
 
     return texto;
-} */
+}
 
-/* function ponerAsteriscosTexto(texto){
-    let re = / /gi;
-    texto = texto.replace(re, "*");
+function ponerAsteriscosTexto(texto){
+    /* let re = / /gi;
+    texto = texto.replace(re, "*"); */
 
     texto = texto.split(" ").join("*");
 
     return texto;
 }
- */
-function cifrarTexto(texto, clave){
 
-    let numFilas = texto.length / clave;
+function ordenarMatrizPorClave(matriz, clave, numFilas, accion){
+
+    let claveOrdeada = [...clave];
+
+    claveOrdeada = claveOrdeada.sort();
+
+    /* console.log(clave)
+    console.log(claveOrdeada) */
+    console.log(matriz);
+
+    let textoOrdenado = [];
+
+    let contador = 0;
+
+    if(accion == 1){
+        for (let i = 0; i < clave.length; i++) {
+
+            let indice = clave.indexOf(claveOrdeada[i]);
+    
+            for (let j = 0; j < numFilas; j++) {
+                
+                textoOrdenado[contador++] = matriz[j][indice];
+               
+                // console.log(clave.indexOf(claveOrdeada[j]))
+            }
+            
+        }
+    }
+
+    if(accion == 2){
+        for (let i = 0; i < clave.length; i++) {
+
+            let indice = claveOrdeada.indexOf(clave[i]);
+    
+            for (let j = 0; j < numFilas; j++) {
+                
+                textoOrdenado[contador++] = matriz[j][indice];
+               
+                // console.log(clave.indexOf(claveOrdeada[j]))
+            }
+            
+        }
+    }
+
+    return textoOrdenado;
+
+}
+
+function cifrarTexto(texto, clave, accion){
+
+    let numFilas = texto.length / clave.length;
 
     numFilas = Math.ceil(numFilas);
 
@@ -69,14 +119,14 @@ function cifrarTexto(texto, clave){
     /* console.log(indice) */
     let contador = 0;
 
-    for (let i = 0; i < numFilas; i++) {
+    for (let i = 0; i < clave.length; i++) {
         
-        for (let j = 0; j < clave; j++) {
+        for (let j = 0; j < numFilas; j++) {
             if (contador < texto.length) {
-                tablaMensaje[i][j] = texto[contador++];
+                tablaMensaje[j][i] = texto[contador++];
             } else {
-                // Si hemos alcanzado el final del texto, llenar el resto de la fila con espacios
-                tablaMensaje[i][j] = ' ';
+                // Si hemos alcanzado el final del texto, llenar el resto de la fila con asteriscos
+                tablaMensaje[j][i] = '*';
             }
             
         }
@@ -90,29 +140,33 @@ function cifrarTexto(texto, clave){
         }
         
     } */
-    contador = 0;
+
+    let textoOrdenado = ordenarMatrizPorClave(tablaMensaje, clave, numFilas, accion);
+
+    /* contador = 0;
     let cadenaMensaje = [];
-    for (let i = 0; i < clave; i++) {
+    for (let i = 0; i < clave.length; i++) {
         for (let j = 0; j < numFilas; j++) {
-            cadenaMensaje[contador++] = tablaMensaje[j][i];
+            cadenaMensaje[contador++] = matrizOrdenada[j][i];
         
         }
         
-    }
+    } */
+
 
     /* let cadenaMensaje = tablaMensaje.flat(); */
 
-    // console.log(tablaMensaje);
+    /* console.log(tablaMensaje); */
     /* console.log(tablaMensaje.length); */
 
     /* document.write(tablaMensaje); */
 
-    return cadenaMensaje;
+    return textoOrdenado;
 }
 
-function descifrarTexto(texto, clave){
+function descifrarTexto(texto, clave, accion){
 
-    let numFilas = texto.length / clave;
+    let numFilas = texto.length / clave.length;
 
     numFilas = Math.ceil(numFilas);
 
@@ -130,7 +184,7 @@ function descifrarTexto(texto, clave){
     /* console.log(indice) */
     let contador = 0;
 
-    for (let i = 0; i < clave; i++) {
+    for (let i = 0; i < clave.length; i++) {
         
         for (let j = 0; j < numFilas; j++) {
             
@@ -160,10 +214,10 @@ function descifrarTexto(texto, clave){
         
     } */
 
-    let cadenaMensaje = tablaMensaje.flat();
-
     /* console.log(tablaMensaje);
     console.log(tablaMensaje.length); */
 
-    return cadenaMensaje;
+    let textoOrdenado = ordenarMatrizPorClave(tablaMensaje, clave, numFilas, accion);
+
+    return textoOrdenado;
 }

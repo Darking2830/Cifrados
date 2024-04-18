@@ -76,7 +76,7 @@ function cifrarTexto(texto, clave){
             if (contador < texto.length) {
                 tablaMensaje[i][j] = texto[contador++];
             } else {
-                // Si hemos alcanzado el final del texto, llenar el resto de la fila con espacios
+                // Si hemos alcanzado el final del texto, llenar el resto de la fila con ateriscos
                 tablaMensaje[i][j] = '*';
             }
             
