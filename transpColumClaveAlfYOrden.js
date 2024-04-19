@@ -59,7 +59,7 @@ function ordenarMatrizPorClave(matriz, clave, numFilas, accion){
 
     /* console.log(clave)
     console.log(claveOrdeada) */
-    console.log(matriz);
+    // console.log(matriz);
 
     let textoOrdenado = [];
 
