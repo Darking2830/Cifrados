@@ -4,22 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CIFRADO EQUIPO 9</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-    <h2>cifrado por transposición columnar por clave alfabética y orden</h2>
-    <div>
-        <input type="text" placeholder="Ingrese texto a cifrar/descifrar" class="texto-cifrado">
-        <input type="text" placeholder="Ingrese clave alfabética" class="clave-cifrado">
+    <div class="bg"> 
+        <div class="home-btn">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+            </a>
+        </div>
 
-        <input type="radio" name="accion-cifrado" class="accion-cifrar" value="1">Cifrar
+    <section>
 
-        <input type="radio" name="accion-cifrado" class="accion-descifrar" value="2">Descifrar
+        <div class="icon-container-cifrado">
+            <h2>transposición columnar por clave alfabética y orden</h2>
 
-        <input type="button" value="Procesar" onclick="obtenerValor()">
-    </div>
+            <div class="group">
+            <form class="formulario">
+                <input type="text" class="texto-cifrado">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label class="cifrado">Texto a cifrar/descifrar</label>
+            </form>
+            </div>
 
-    <p>texto cifrado: <b class="resultado-cifrado"></b></p><br><br>
-    <p>matriz: <b class="resultado-matriz"></b></p>
+            <div class="group">
+            <form class="formulario">
+                <input type="text" class="clave-cifrado">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label class="cifrado"> Ingrese clave alfabética </label>
+            </form>
+            </div>
+
+            <label class="rad-label">
+            <input type="radio" name="accion-cifrado"  value="1" class="rad-input">
+            <div class="rad-design"></div>
+            <div class="rad-text">Cifrar</div>
+            </label>
+
+            <label class="rad-label">
+                <input type="radio" name="accion-cifrado" class="rad-input" value="2">
+                <div class="rad-design"></div>
+                <div class="rad-text">Descifrar</div>
+                </label>
+
+            <input type="button" onclick="obtenerValor()" value="Procesar" class="btn-procesar">
+
+            <p>texto cifrado: <b class="resultado-cifrado"></b></p>
+
+        </div>
+
+</section>
+
+</div>
 
     <script src="transpColumClaveAlfYOrden.js"></script>
 </body>

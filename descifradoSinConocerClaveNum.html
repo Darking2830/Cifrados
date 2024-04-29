@@ -4,17 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CIFRADO EQUIPO 9</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+    <div class="bg">
+        <div class="home-btn">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+            </a>
+        </div>
+        <div class="icon-container-cifrado">
     <h2>descifrado de mensaje generado por Transposición con Clave Numérica (SIN CONOCER LA CLAVE)</h2>
-    <div>
-        <input type="text" placeholder="Ingrese texto a cifrar/descifrar" class="texto-cifrado">
+    <div class="group">
+        <input type="text" class="texto-cifrado">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label class="cifrado">Texto a cifrar/descifrar</label>
+        </div>
 
-        <input type="button" value="Procesar" onclick="obtenerValor()">
-    </div>
-
+        <input type="button" value="Procesar" onclick="obtenerValor()" class="btn-procesar">
+        
     <p class="resultados">posibles textos descifrados: </p>
 
+    </div>
+
+</div>
     <script src="descifradoSinConocerClaveNumerica.js"></script>
 </body>
 </html>

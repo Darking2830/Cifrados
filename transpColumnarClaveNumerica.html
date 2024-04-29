@@ -4,23 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CIFRADO EQUIPO 9</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-    <h2>cifrado por transposición columnar por clave numérica</h2>
-    <div>
-        <input type="text" placeholder="Ingrese texto a cifrar/descifrar" class="texto-cifrado">
-        <input type="number" placeholder="Ingrese clave numerica" class="clave-cifrado" min="0" max="26">
-
-        <input type="radio" name="accion-cifrado" class="accion-cifrar" value="1">Cifrar
-
-        <input type="radio" name="accion-cifrado" class="accion-descifrar" value="2">Descifrar
-
-        <input type="button" value="Procesar" onclick="obtenerValor()">
+    <div class="bg">
+        <div class="home-btn">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+            </a>
+        </div>
+        
+    <section>
+        
+        <div class="icon-container-cifrado">
+            <h2>Transposición columnar por clave num.</h2>
+    
+            <div class="group">
+            <input type="text" class="texto-cifrado">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label class="cifrado">Texto a cifrar/descifrar</label>
+            </div>
+            <input type="number" placeholder="Ingrese número de desplazamiento" class="clave-cifrado" min="0" max="26">
+    
+            <label class="rad-label">
+            <input type="radio" name="accion-cifrado" class="rad-input" value="1">
+            <div class="rad-design"></div>
+            <div class="rad-text">Cifrar</div>
+            </label>
+    
+            <label class="rad-label">
+            <input type="radio" name="accion-cifrado" class="rad-input" value="2">
+            <div class="rad-design"></div>
+            <div class="rad-text">Descifrar</div>
+            </label>
+    
+            <input type="button" value="Procesar" onclick="obtenerValor()" class="btn-procesar">
+    
+            <p>texto cifrado: <b class="resultado-cifrado"></b></p>
+        </div>
+    
+    
+    
+    </section>
+    
     </div>
-
-    <p>texto cifrado: <b class="resultado-cifrado"></b></p><br><br>
-    <p>matriz: <b class="resultado-matriz"></b></p>
-
+    
     <script src="transpColumnarClaveNumerica.js"></script>
 </body>
 </html>
