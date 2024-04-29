@@ -85,9 +85,17 @@ function descifrarTexto(texto, clave){
 
     let matrizVigenere = crearMatriz();
 
-    //cifrar texto usando la matriz
+    //descifrar texto usando la matriz
+    let distanciaLetras = 0;
     for (let i = 0; i < texto.length; i++) {
-       textoCifrado[i] = matrizVigenere[(abecedario.indexOf(texto[i])+1)-(abecedario.indexOf(claveAjustada[i])+1)][abecedario.indexOf(claveAjustada[i])+1];
+
+        if(abecedario.indexOf(claveAjustada[i]) > abecedario.indexOf(texto[i])){
+            distanciaLetras = (abecedario.indexOf(texto[i])+26) - abecedario.indexOf(claveAjustada[i]);
+        }
+        else{
+            distanciaLetras = abecedario.indexOf(texto[i]) - abecedario.indexOf(claveAjustada[i]);
+        }
+       textoCifrado[i] = matrizVigenere[distanciaLetras+1][0];
 
         
     }

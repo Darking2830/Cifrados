@@ -29,26 +29,11 @@ function obtenerValor(){
 }
 
 function mostrarResultado(resultado){
-    resultadoCifrado.innerText = resultado.join("").toLowerCase();
-    
+    let texto = resultado.join("").toLowerCase();
+    texto = texto.replace(/ /g, "&nbsp;");
+    resultadoCifrado.innerHTML = texto;   
 }
 
-/* function quitarAsteriscosTexto(texto){
-    
-    texto = texto.split("*").join(" ");
-
-    return texto;
-} */
-
-/* function ponerAsteriscosTexto(texto){
-    let re = / /gi;
-    texto = texto.replace(re, "*");
-
-    texto = texto.split(" ").join("*");
-
-    return texto;
-}
- */
 function cifrarTexto(texto, clave){
 
     let numFilas = texto.length / clave;
@@ -62,11 +47,6 @@ function cifrarTexto(texto, clave){
         tablaMensaje[i] = [];
     }
 
-
-    /* console.log("columnas: " + clave.length);
-    console.log("filas: " + numFilas); */
-
-    /* console.log(indice) */
     let contador = 0;
 
     for (let i = 0; i < numFilas; i++) {
@@ -83,13 +63,6 @@ function cifrarTexto(texto, clave){
         
     }
     
-    /* for (let i = 0; i < texto.length; i++) {
-        for (let j = 0; j < numFilas; j++) {
-            cadenaMensaje[contador] = tablaMensaje[i][j];
-            contador++;
-        }
-        
-    } */
     contador = 0;
     let cadenaMensaje = [];
     for (let i = 0; i < clave; i++) {
@@ -99,13 +72,6 @@ function cifrarTexto(texto, clave){
         }
         
     }
-
-    /* let cadenaMensaje = tablaMensaje.flat(); */
-
-    // console.log(tablaMensaje);
-    /* console.log(tablaMensaje.length); */
-
-    /* document.write(tablaMensaje); */
 
     return cadenaMensaje;
 }
@@ -123,11 +89,6 @@ function descifrarTexto(texto, clave){
         tablaMensaje[i] = [];
     }
 
-
-    /* console.log("columnas: " + clave.length);
-    console.log("filas: " + numFilas); */
-
-    /* console.log(indice) */
     let contador = 0;
 
     for (let i = 0; i < clave; i++) {
@@ -141,29 +102,7 @@ function descifrarTexto(texto, clave){
         
     }
 
-    /* console.log(tablaMensaje); */
-    
-    /* for (let i = 0; i < texto.length; i++) {
-        for (let j = 0; j < numFilas; j++) {
-            cadenaMensaje[contador] = tablaMensaje[i][j];
-            contador++;
-        }
-        
-    } */
-    /* contador = 0;
-    let cadenaMensaje = [];
-    for (let i = 0; i < clave.length; i++) {
-        for (let j = 0; j < numFilas; j++) {
-            cadenaMensaje[contador++] = tablaMensaje[j][i];
-        
-        }
-        
-    } */
-
     let cadenaMensaje = tablaMensaje.flat();
-
-    /* console.log(tablaMensaje);
-    console.log(tablaMensaje.length); */
 
     return cadenaMensaje;
 }
