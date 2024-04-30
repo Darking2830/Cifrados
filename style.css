@@ -392,6 +392,7 @@ to 	{ width:0; background:transparent; }
 
     .resultados{
         
+        overflow-y: scroll;
     }
 
     .contenido-div{
