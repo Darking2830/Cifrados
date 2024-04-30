@@ -313,13 +313,13 @@ to 	{ width:0; background:transparent; }
 
 .btn-procesar{
     border-radius: 5px;
-  padding: 15px 25px;
-  font-size: 22px;
-  text-decoration: none;
-  margin: 20px;
-  color: #fff;
-  position: relative;
-  display: inline-block;
+    padding: 15px 25px;
+    font-size: 22px;
+    text-decoration: none;
+    margin: 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
 }
 
 .btn-procesar:active {
@@ -344,8 +344,8 @@ to 	{ width:0; background:transparent; }
         padding-right: 20px;
         position: fixed;
         z-index: 2;
-	top: 90%;
-        left: 50%;
+	    top: 90%;
+        left: 50.6%;
         transform: translate(-50%, -50%);
     }
         
