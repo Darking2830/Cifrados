@@ -49,7 +49,7 @@ function descifrarTexto(texto){
             }
         }
 
-        //convierte en cadena la matriz con el texto descifrado
+        //convierte en vector la matriz con el texto descifrado
         let cadenaMensaje = tablaMensaje.flat();
 
         //crea un elemento para mostrar todos los resultados
