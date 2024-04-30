@@ -22,6 +22,10 @@ function mostrarResultado(resultado){
 
 function descifrarTexto(texto){
 
+    let divResultados = document.querySelector(".resultados");
+    while (divResultados.firstChild) {
+        divResultados.removeChild(divResultados.firstChild);
+    }
     
     //ciclo que se repite dependiendo del largo del texto
     for (let k = 1; k <= texto.length; k++) {
@@ -53,6 +57,8 @@ function descifrarTexto(texto){
         //se crea un elemento div
         let elemento = document.createElement("p")
 
+        elemento.classList.add('contenido-div');
+
         //se crea el contenido que llevará el elemento recién creado
         let contenido = document.createTextNode(`${k}. ${cadenaMensaje.join("").toLowerCase()}`);
 
@@ -60,9 +66,9 @@ function descifrarTexto(texto){
         elemento.appendChild(contenido);
 
         //se muestra el elemento con su contenido en el DOM
-        let pActual = document.getElementById("resultados");
-        document.body.insertBefore(elemento, pActual);
-        //pActual.appendChild(elemento);
+        let pActual = document.querySelector(".resultados");
+        //document.body.insertBefore(elemento, pActual);
+        pActual.appendChild(elemento);
 
     }
 

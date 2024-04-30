@@ -389,3 +389,12 @@ to 	{ width:0; background:transparent; }
         -moz-animation:inputHighlighter 0.3s ease;
         animation:inputHighlighter 0.3s ease;
     }
+
+    .resultados{
+        
+    }
+
+    .contenido-div{
+        display: flex;
+        justify-content: center;
+    }
