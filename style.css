@@ -215,7 +215,8 @@ input[type="radio"]{
 
 .group 	{ 
     position:relative; 
-    margin-bottom:45px; 
+    margin-bottom:45px;
+    bottom:-10px;
 }
 
 .texto-cifrado 	{
@@ -399,13 +400,15 @@ to 	{ width:0; background:transparent; }
     }
 
     .resultados{
-        
         overflow-y: scroll;
+        overflow-x: hidden;
+        height: 150px;
     }
 
     .contenido-div{
         display: flex;
         justify-content: center;
+        padding: 3px;
     }
 .footer {
         position: fixed;
@@ -417,3 +420,9 @@ to 	{ width:0; background:transparent; }
         text-align: center;
         font-weight: bolder;
     }
+
+.resultado-cifrado{
+    overflow-y: show;
+    overflow-x: hidden;
+    height: 150px;
+}
